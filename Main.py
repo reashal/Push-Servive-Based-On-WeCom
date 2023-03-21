@@ -6,7 +6,7 @@ from RSS.ModelOsChina import ModelOsChina
 
 q = {'8': 0, '11': 0, '14': 0, '17': 0, '20': 0}
 # 三小时推送一次百度热搜
-p = {'0': 0, '15': 0, '30': 0, '45': 0}
+p = {'0': 0, '15': 0, '30': 0, '45': 0, '10': 0}
 # 15分钟自动推送一次邮件
 while True:
     ti = time.localtime(time.time())
@@ -16,6 +16,14 @@ while True:
         os.remove('pull_mail.txt')
         mails = ModelMail(2)
         # 以上邮件手动推送部分
+    if now_hour % 10 == 0:
+        if p['10'] == 0:
+            baidu = ModelBaiduTop()
+            oschina = ModelOsChina()
+            p['10'] = 1
+    else:
+        p['10'] = 0
+
     if now_hour < 8 or now_hour > 20:
         # 休息时间，停下手头工作吧
         q['8'] = q['11'] = q['14'] = q['17'] = q['20'] = q['23'] = 0

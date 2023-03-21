@@ -80,7 +80,7 @@ python项目中必须包含一个 requirements.txt 文件，用于记录所有�
 
 * **Main.py**
   * 调用 **Mail.Model.Model(a)** 时，参数为1代表自动推送，不发送空邮件提醒，参数为2则代表手动拉取，提醒没有新邮件
-  * （可能需要改）调用**RSS.ModelBaituTop.ModelBaiduTop()**，即可推送一次订阅信息
+  * 调用**RSS.ModelBaituTop.ModelBaiduTop()**，即可获取一次最新订阅，并将之展示到前端，**.push**则会推送
 * **Mail/ModelMail.py**
   * 调用**Mail.ReceiveMail.ReceiveMail()**的时，传入**邮箱登录所需信息**
 * __Mail/ReceiveMail.py__

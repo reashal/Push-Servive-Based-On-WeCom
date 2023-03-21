@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="chn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>即刻开源中国</title>
+    <meta name="author" content="reashal">
+    <meta name="description" content="睿屿青衫个人导航页">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/reashal.png">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3966102_mj8w76tpoa.css" </head>
+
+<body>
+    <div class="Explain" id="Explain">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="iconfont icon-play" id="musicBtn" title="播放音乐"></i>
+        <a href="//des.reashal.com" target="_self"><i class="iconfont icon-planet" id="planet" title="回到主页"></i></a>
+        <a href="//bak.reashal.com/projects/206b" target="_blank"><i class="iconfont icon-plane" id="plane" title="食用指南"></i></a>
+        <input id="ifExplain" value="0">
+    </div>
+    <div class="card">
+        <div class="rss">
+            <h2 id="cnt">🎉此时开源中国15条🎉</h2>
+            <a href="https://mp.weixin.qq.com/s/f-7oinIPqzUbf0mbU84Aig">1.:fire: 周热点 | GPT-4发布；文心一言亮相；微软开源Visual
+                ChatGPT...</a>
+            <a href="https://www.oschina.net/news/233429/nightingale-6-0-beta-released">2.不止于监控，夜莺 V6
+                全新升级为开源观测平台</a>
+            <a href="https://www.oschina.net/news/233414/jmix-1-5-is-released">3.Jmix 1.5 新功能概览 - 企业级少代码 Web
+                快速开发框架</a>
+            <a href="https://www.oschina.net/news/233412/twenty-five-years-of-curl">4.curl 诞生 25 周年</a>
+            <a href="https://www.oschina.net/news/233411/qualcomm-open-source-aptx-encoder">5.高通开源 aptX 和 aptX HD
+                编码器</a>
+            <a href="https://www.oschina.net/news/233410/zippyshare-closing">6.入不敷出、无以为继，Zippyshare 关站</a>
+            <a href="https://www.oschina.net/news/233404/john-deere-gpl-violations">7.SFC 点名批评农具制造商 John Deere 违反
+                GPL 协议</a>
+            <a href="https://www.oschina.net/news/233403/rocksdb-8-0-0-released">8.RocksDB 8.0 发布</a>
+            <a href="https://www.oschina.net/question/4855753_2328283">9.如何借助 eBPF 零代码修改实现云原生应用的可观测性？</a>
+            <a href="https://www.oschina.net/p/glacier-framework">10.Glacier Framework —— 支持依赖注入的 Go 开发框架</a>
+            <a href="https://gitee.com/acgist/taoyao">11.Gitee 推荐 | 基于 Mediasoup 的 WebRTC 音视频信令服务-桃夭</a>
+            <a href="https://my.oschina.net/u/4090830/blog/8575899">12.每日一博 | 测试的底层逻辑</a>
+            <a href="https://www.oschina.net/news/233397/coteditor-4-5-0-released">13.CotEditor 4.5 发布，Mac 文本编辑器</a>
+            <a href="https://www.oschina.net/news/233396/fastify-4-15-0-released">14.Fastify v4.15.0 发布，极速 Node.js
+                Web 框架</a>
+            <a href="https://www.oschina.net/news/233395/tor-browser-12-0-4-released">15.Tor Browser 12.0.4
+                发布，隐私浏览器</a>
+            <div class="fff"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="copy">reashal &copy 2023</p>
+    </div>
+    <!--鼠标点击泡泡特效，网上找的-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+    <script type="text/javascript" src="js/djtx.js"></script>
+    <!-- 音乐通过头像由JS控制 -->
+    <audio controls id="music" class="music" loop>
+        <source src="music/LettingGo.mp3" type="audio/mpeg">
+    </audio>
+    <script src="js/avator.js" async="async"></script>
+    <!-- JS异步，加载完DOM再操作，否则可能报错 -->
+    <script src="js/about.js" async="async"></script>
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(-65deg, #ec6fa3, #2f4af2);
+}
+
+li {
+    list-style-type: none;
+}
+
+.iconfont {
+    font-size: 20px !important;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 3px;
+}
+
+.flexBox {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    /* 只需要居中显示 fontCard即可 */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    /* animation: cardBack 2s 1 linear forwards; */
+}
+
+.flexBox-flip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 只需要居中显示 fontCard即可 */
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation: cardTurn 2s 1 linear forwards;
+}
+
+.flexBox-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 只需要居中显示 fontCard即可 */
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* backface-visibility: hidden; */
+    animation: cardBack 2s 1 linear forwards;
+}
+
+
+/* 正面盒子 */
+
+.fontCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 70%;
+    max-width: 750px;
+    min-width: 172px;
+    background-color: rgba(219, 245, 245, .15);
+    border-radius: 28px;
+    backface-visibility: hidden;
+    padding-top: 12px;
+    /* box-sizing:border-box; */
+}
+
+.avaBox {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #E91E63;
+    opacity: .6;
+    border-radius: 50%;
+    /* top: 12px; */
+}
+
+.avaBox img {
+    height: 100px;
+}
+
+.left,
+.right {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.right {
+    right: 0;
+}
+
+.left .leftCircle,
+.right .rightCircle {
+    width: 50px;
+    height: 100px;
+    background-color: #fde6d4;
+    opacity: .34;
+}
+
+.left .leftCircle {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    transform-origin: right center;
+}
+
+.right .rightCircle {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transform-origin: left center;
+}
+
+.avatar {
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    perspective: 300px;
+    /* 头像父盒子加透视，指向它的时候放大 */
+}
+
+/* 平静时期头像效果 */
+.ava {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    margin: 0;
+    transition: all 1s;
+}
+
+.ava:hover {
+    transform: translateZ(32px);
+}
+
+.ava-play:hover {
+    cursor: pointer;
+}
+
+/* 作者信息部分 */
+
+.author {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 33px;
+    font-weight: bold;
+}
+
+.icon {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 33px;
+    font-weight: bold;
+}
+
+#cnt {
+    margin-top: -2px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid rgb(255, 255, 255, .7);
+}
+
+/* 正面卡片导航图标部分 */
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.icon li {
+    padding-right: 5px;
+}
+
+.icon .FinLi {
+    padding-right: 0;
+}
+
+
+i:hover {
+    color: #ec6fa3;
+}
+
+/* 正面盒子部分完成 */
+
+/* 页脚部分 */
+
+.footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    /* 界面已铺满，页脚需要绝对定位 */
+    min-width: 172px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    background-color: rgba(219, 245, 245, .4);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 页脚部分完成 */
+
+.fontCard {
+    z-index: 1;
+}
+
+/* 翻转卡面 */
+
+.backCard {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: fold;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: rgba(219, 245, 245, .15);
+    width: 70%;
+    max-width: 750px;
+    min-width: 172px;
+    padding-top: 12px;
+    border-radius: 28px;
+}
+
+.ava2 {
+    display: block;
+    position: relative;
+    /* top: 12px; */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #fde6d4;
+}
+
+.backCard h2 {
+    position: relative;
+}
+
+.backCard p {
+    position: relative;
+    padding-top: 3px;
+}
+
+.backCard div {
+    padding-bottom: 8px;
+}
+
+/* 翻转卡面完成 */
+
+@keyframes cardTurn {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes cardBack {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.music {
+    display: none;
+}
+
+/* 隐藏audio控件 */
+
+/* 右上角说明按钮给我CPU算烧了 */
+
+.Explain {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 0%;
+    right: 0%;
+    width: 180px;
+    height: 60px;
+    z-index: 99;
+    /* border: 2px solid white; */
+    overflow: hidden;
+}
+
+#ifExplain {
+    display: none;
+}
+
+.Explain span {
+    position: absolute;
+    display: block;
+}
+
+.Explain span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 3s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    37.5% {
+        left: 0%;
+    }
+
+    75%,
+    100% {
+        left: 100%;
+    }
+
+}
+
+.Explain span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 3s linear infinite;
+    animation-delay: 1.125s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    12.5% {
+        top: 0%;
+    }
+
+    25%,
+    100% {
+        top: 100%;
+    }
+}
+
+.Explain span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 3s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    37.5% {
+        right: 0%;
+    }
+
+    75%,
+    100% {
+        right: 100%;
+    }
+}
+
+.Explain span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 3s linear infinite;
+    animation-delay: 2.625s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    12.5% {
+        bottom: 0%;
+    }
+
+    25%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+.Explain i {
+    color: #ffffff;
+    opacity: .6;
+    cursor: pointer;
+}
+
+#musicBtn {
+    font-size: 34px !important;
+    border: 1px solid w;
+}
+
+#shuoming {
+    font-size: 29px !important;
+}
+
+#plane {
+    font-size: 27px !important;
+}
+
+.card{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.rss {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    min-width: 300px;
+    max-width: 750px;
+    background-color: rgba(219, 245, 245, .15);
+    border-radius: 28px;
+    padding-top: 12px;
+    
+}
+
+.rss h2 {
+    margin: 0 auto;
+}
+
+.card a {
+    display: block;
+    font-size: 14px;
+    padding: 0 6px;
+}
+
+.card .fff {
+    margin-bottom: 8px;
+}
+
+#planet {
+    font-size: 24px !important;
+}

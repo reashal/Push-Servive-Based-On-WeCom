@@ -4,7 +4,7 @@ import requests
 
 
 # 验证token有效后进行消息发送
-# 后续功能更改可能需要改这里
+# 此处为不同消息类型的JSON推送模板，可以按需改动，但一定要严格参考企业微信官方提供的格式
 
 class SendMessage(object):
 
@@ -40,7 +40,7 @@ class SendMessage(object):
                     },
                     "quote_area": {
                         "type": 1,
-                        "url": "https://bak.reashal.com/projects/206b",
+                        "url": "https://www.reashal.com/posts/post-011",
                         "title": "邮件内容：",
                         "quote_text": content
                     },
@@ -73,7 +73,7 @@ class SendMessage(object):
                     ],
                     "card_action": {
                         "type": 1,
-                        "url": "https://bak.reashal.com/projects/206b",
+                        "url": "https://www.reashal.com/posts/post-011",
                     }
                 },
             }

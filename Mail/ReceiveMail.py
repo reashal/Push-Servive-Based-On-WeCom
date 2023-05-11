@@ -1,9 +1,22 @@
 import re
 import poplib
 from email.parser import Parser
-from Others.GetTime import GetTime
 from email.utils import parseaddr
+from Others.GetTime import GetTime
 from email.header import decode_header
+
+'''
+邮件解析模块执行流程：
+    1.连接邮箱，连接成功则继续执行，失败则抛出异常，打印提示
+    2.检查邮箱是否为空，空的话停止执行并给出返回值，不空的话继续执行
+    3.依次遍历未读邮件，先预处理（如换行、编码等），再展开解析（标头部分解析一次，载荷部分可能包含嵌套，需要递归解析。这两部分可能涉及编码等问题，详细看注释）
+    4.标头部分（包含标题、时间、发件人、收件人等信息）解码
+    5.将解析好的内容重新编码为utf-8，否则无法正常显示
+    6.邮件正文部分处理很麻烦，针对项目需求，用正则表达式剔除HTML结构正文中，涉及HTML和CSS等语法的无关内容，仅保留正文，否则企业微信无法推送
+    7.解析并推送完后，删除此邮件，否则会重复解析推送。以163邮箱为例，已删除的可以到官方[客户端删信]里面找到
+    8.关闭连接
+除了这个丑陋的代码还有优化空间，其它不需要修改
+'''
 
 '''
 开发文档：python标准库
@@ -18,7 +31,6 @@ from email.header import decode_header
 '''
 更换账号/环境时可能需要更改的信息：
   构造函数的参数
-  connect_mail()中text = b'\r\n'.join(lines)
   get_mail_info()中第一个参数为企业微信用户id
 '''
 
@@ -34,7 +46,6 @@ class ReceiveMail(object):
 
     def if_have_mail(self):
         # 第二步
-        # print(self.if_a_mail)
         return self.if_a_mail
 
     def get_text_charset(self, text):
@@ -256,7 +267,7 @@ class ReceiveMail(object):
         # win用'\r\n'，Linux用'\n'来给字节 b'' 换行
         # 然后join生成一个新字节串
 
-        text = text.decode('utf-8','ignore')
+        text = text.decode('utf-8', 'ignore')
         # 将 字节 编码为 utf-8 字符串
 
         text = Parser().parsestr(text)

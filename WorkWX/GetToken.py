@@ -1,8 +1,8 @@
 import requests
 
 
-# 企业微信消息推送需要首先获取 token
-# 已封装完毕
+# 企业微信消息推送需要首先获取 token。获取access_token相当于创建了一个登录凭证，其它的业务API接口，都需要依赖于access_token来鉴权调用者身份。
+# 已封装完毕，无需改动。
 
 class GetToken(object):
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="chn">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,10 @@
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>即刻百度热搜</title>
     <meta name="author" content="reashal">
-    <meta name="description" content="睿屿青衫个人导航页">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/reashal.png">
-    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3966102_mj8w76tpoa.css" </head>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3966102_mj8w76tpoa.css">
+</head>
 
 <body>
     <div class="Explain" id="Explain">

@@ -2,11 +2,11 @@
 
 ### 开发目的
 
-利用Python解析非腾讯系的第三方邮件系统未读邮件和RSS聚合订阅信息，以JSON的格式提交至企业微信接口，实现微信/企业微信消息推送的效果。同时考虑到消息推送可能会打断用户的专注，同时采用HTML、CSS、JavaScript和PHP实现数据的静默展示。
+利用Python解析腾讯系之外的第三方邮件系统未读邮件和RSS聚合订阅信息，以JSON的形式提交至企业微信接口，实现微信/企业微信消息推送的效果。同时考虑到消息推送可能会打断用户的专注，同时采用HTML、CSS、JavaScript和PHP实现数据的静默展示。
 
-> 针对上述需求，如果使用官方APP，后台常驻容易造成性能浪费、越界获取权限可能会泄露隐私……如果使用网页，则可能会遇到需要频繁切换网页、重新登录和无休止的弹窗请求获取位置信息等场景。
+> 针对上述需求，如果使用应用厂商提供的不同APP，容易造成后台常驻时性能浪费、越界请求权限时隐私泄露等问题；而如果使用网页，也同样需要面对需要反复切换页面、频繁登录过期和功能阉割等痛点。
 
-### 开发成果
+### 成果概括
 
 + 邮件解析：
   + 用户仅需在第一次使用系统时填好邮箱信息，后续无需重新配置。
@@ -25,19 +25,9 @@
 
 ### 成果展示
 
-![微信推送效果](https://static.reashal.com/images/graduation/wechatpush.jpg)
+以企业微信为例，展示项目成果。实际使用过程中，也可用微信替代。
 
-![企业微信推送效果](https://static.reashal.com/images/graduation/workwxpush.jpg)
-
-![手机端使用说明](https://static.reashal.com/images/graduation/mindex.jpg)
-
-![手机端百度热搜](https://static.reashal.com/images/graduation/mbaidu.png)
-
-![手机端开源中国](https://static.reashal.com/images/graduation/moschina.png)
-
-![平板端百度热搜](https://static.reashal.com/images/graduation/padbaidu.png)
-
-![电脑端使用说明](https://static.reashal.com/images/graduation/pcindex.jpg)
+![企业微信推送效果](https://static.reashal.com/images/PSBOW/display-wecom.jpg)
 
 ## 使用说明
 
@@ -124,11 +114,11 @@ Python项目中必须包含一个 requirements.txt 文件，用于记录所有�
 
 文中提到的几个参数、自建应用、添加可信IP等均需配置。
 
-![企业微信配置1](https://static.reashal.com/images/graduation/workwx1.png)
+![企业微信配置1](https://static.reashal.com/images/PSBOW/setting-wecom1.png)
 
-![企业微信配置2](https://static.reashal.com/images/graduation/workwx2.png)
+![企业微信配置2](https://static.reashal.com/images/PSBOW/setting-wecom2.png)
 
-![企业微信配置3](https://static.reashal.com/images/graduation/workwx3.png)
+![企业微信配置3](https://static.reashal.com/images/PSBOW/setting-wecom3.png)
 
 ## 系统设计
 
@@ -136,19 +126,19 @@ Python项目中必须包含一个 requirements.txt 文件，用于记录所有�
 
 ### 系统结构设计图
 
-![系统结构设计图](https://static.reashal.com/images/graduation/module_system.png)
+![系统结构设计图](https://static.reashal.com/images/PSBOW/struct-system.png)
 
 ### 邮件模块设计图
 
-![邮件模块设计图](https://static.reashal.com/images/graduation/module_mail.png)
+![邮件模块设计图](https://static.reashal.com/images/PSBOW/struct-mail.png)
 
 ### 订阅模块设计图
 
-![订阅模块设计图](https://static.reashal.com/images/graduation/module_rss.png)
+![订阅模块设计图](https://static.reashal.com/images/PSBOW/struct-rss.png)
 
 ### 展示模块设计图
 
-![展示模块设计图](https://static.reashal.com/images/graduation/module_display.png)
+![展示模块设计图](https://static.reashal.com/images/PSBOW/struct-display.png)
 
 ## 设计流程
 
@@ -156,11 +146,11 @@ Python项目中必须包含一个 requirements.txt 文件，用于记录所有�
 
 ### 邮件解析流程图
 
-![邮件解析流程图](https://static.reashal.com/images/graduation/flow_mail.png)
+![邮件解析流程图](https://static.reashal.com/images/PSBOW/flow-mail.png)
 
 ### 数据展示流程图
 
-![数据展示流程图](https://static.reashal.com/images/graduation/flow_push.png)
+![数据展示流程图](https://static.reashal.com/images/PSBOW/flow-push.png)
 
 ## 注意事项
 
